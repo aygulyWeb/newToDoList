@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: sans-serif;
+	background-color: #eee;
+}
+
+.dropdown {
+	margin-right: 80px;
+}
+.border {
+	border-color: red;
+}
+
+/* ////////////////////// Authoriztion styles //////////////////////////// */
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.reg-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* width: 250px; */
+	background-color: #fff;
+	box-shadow: 0px 0px 8px rgb(119, 116, 116);
+	border-radius: 3px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+}
+
+.reg-title {
+	text-transform: uppercase;
+	font-size: 20px;
+	color: rgb(107, 104, 104);
+}
+
+.reg-form .reg-input-style {
+	outline: none;
+	appearance: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 12px;
+	margin-top: 20px;
+	width: 250px;
+}
+
+.reg-form .reg-input-style:focus {
+	border: 1px solid black;
+}
+
+.reg-input-style.border-red {
+	border-color: red;
+}
+.reg-btn {
+	display: block;
+	background-color: rgb(31, 110, 48);
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	padding: 8px 20px;
+	cursor: pointer;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.reg-link {
+	color: rgb(70, 75, 91);
+}
+
+/* Авторизация ошибки */
+.reg-input-style.error {
+	border-color: red;
+}
+
+.create-show-pass {
+	margin-top: 10px;
+}
+.create-show {
+	color: rgb(82, 81, 81);
+}
+#create-check {
+	cursor: pointer;
+}
+
+#reg-form-auth.active {
+	display: none;
+}
+
+#create-form-acc.active {
+	display: none;
+}
+
+/*//////////////  TABLE NOTES ////////////////////// */
+
+#tableRow {
+	padding-top: 40px;
+}
+/* .column {
+	display: flex;
+	justify-content: space-between;
+} */
+.table-column {
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.table-delete,
+.table-edit {
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+.table-edit {
+	background-color: #1aa3ff;
+	color: #000;
+	margin-left: 25px;
+}
+.table-delete {
+	background-color: #cc0000;
+	color: #fff;
+	margin-left: 25px;
+}
+
+.table-text {
+	display: flex;
+	align-items: center;
+}
+
+.table-round {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #ffcc00;
+	border-radius: 50%;
+	margin-right: 40px;
+}
+.input-note {
+	display: inline-block;
+}

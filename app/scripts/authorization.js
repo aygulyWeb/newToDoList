@@ -10,7 +10,6 @@ regLinkAcc.addEventListener('click', () => {
 	render('/app/create.html');
 });
 
-
 function checkUsers(e) {
 	e.preventDefault();
 
@@ -30,12 +29,4 @@ function checkUsers(e) {
 
 regForm.addEventListener('submit', checkUsers);
 
-	// let arr = JSON.parse(localStorage.getItem('arr')) || [];
 
-	// const user = {
-	// 	login: regLogin.value,
-	// 	password: regPassword.value
-	// }
-	// arr.push(user);
-
-	// localStorage.setItem('arr', JSON.stringify(arr));

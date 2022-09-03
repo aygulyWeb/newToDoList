@@ -8,9 +8,13 @@ const createFormAcc = document.querySelector('#create-form-acc'),
 	createLinkAcc = document.querySelector('#create-link-acc');
 
 
+//////////////// RENDER PAGE /////////////////////
+
 createLinkAcc.addEventListener('click', () => {
 	render('/app/authorization.html');
 });
+
+//////////////// SHOW PASSWORD /////////////////////////
 
 createCheck.addEventListener('click', () => {
 	if (createPassword.getAttribute('type') === 'password' && createConfirm.getAttribute('type') === 'password') {
@@ -23,19 +27,38 @@ createCheck.addEventListener('click', () => {
 	}
 });
 
+////////////// LOCAL STORAGE FOR REGISTRATION ////////////////////
+
 function getLocalStorage() {
-	let arr = JSON.parse(localStorage.getItem('arr')) || [];
+	let arr = [];
 
 	const user = {
 		login: createLogin.value,
 		password: createPassword.value,
 		passwordConfirm: createConfirm.value
 	}
-	arr.push(user);
 
-	localStorage.setItem('arr', JSON.stringify(arr));
+	//Сначала тексериу керек базаны если бар болса алерт пенен корсетиу керек. 
+	// Иначе базага жазыу керек
+
+	if (localStorage.getItem('users') == null) {
+		arr.push(user);
+		localStorage.setItem('users', JSON.stringify(arr));
+	} else {
+		arr = JSON.parse(localStorage.getItem('users'));
+		arr.push(user);
+		localStorage.setItem('users', JSON.stringify(arr));
+
+		alert('Успешно');
+	}
+
+	//Если жок болса localstorage импорт кылып обьектке откерип
+	// потом сол обьектке косасыз юзерди
+	// дальше изменённый обьектти строкага айлантырып localstorage га перезапись кыласыз
+
 };
 
+///////////////// VALIDATION INPUTS /////////////////////////
 
 function checkValidation(e) {
 	e.preventDefault();
@@ -59,7 +82,7 @@ function checkValidation(e) {
 	}
 	else {
 		getLocalStorage();
-		render('/app/index.html');
+		render('/app/authorization.html');
 		return true;
 	}
 }

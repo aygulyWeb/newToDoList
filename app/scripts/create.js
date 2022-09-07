@@ -32,6 +32,15 @@ createCheck.addEventListener('click', () => {
 function getLocalStorage() {
 	let arr = [];
 
+	const userDefault = {
+		user: "admin",
+		password1: "root123",
+		password2: "root123"
+	}
+
+	localStorage.setItem('userDefault', JSON.stringify(userDefault));
+
+
 	const user = {
 		login: createLogin.value,
 		password: createPassword.value,
@@ -88,4 +97,7 @@ function checkValidation(e) {
 }
 
 createFormAcc.addEventListener('submit', checkValidation);
+
+
+
 

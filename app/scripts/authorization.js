@@ -10,23 +10,39 @@ regLinkAcc.addEventListener('click', () => {
 	render('/app/create.html');
 });
 
+///////////////////////// VALIDATION /////////////////////////////
+
+
 function checkUsers(e) {
+
 	e.preventDefault();
+
+	let allUsers = JSON.parse(localStorage.getItem('users'));
 
 	const regLoginValue = regLogin.value.trim();
 	const regPasswordValue = regPassword.value.trim();
+
+	const compareUsers = allUsers.filter(user =>
+		user.login == regLogin.value && user.password == regPassword.value);
 
 	if (regLoginValue === '' || regLoginValue === null || regPasswordValue.length <= 5) {
 		addBorderRed(regLogin);
 		addBorderRed(regPassword);
 		return false;
 	}
-	else {
+	if (compareUsers.length > 0) {
+		alert('Успешно');
 		render('/app/index.html');
 		return true;
+	}
+	else {
+		alert('Не существует такой логин');
 	}
 }
 
 regForm.addEventListener('submit', checkUsers);
+
+
+
 
 
